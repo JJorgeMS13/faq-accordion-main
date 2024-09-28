@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../assets/fonts/WorkSans-Italic-VariableFont_wght.ttf') format('truetype'),
+         url('../assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+$dark-purple: #301534;
+$pink: #AD28EB;
+$light-pink: #F8EEFF;
+$pale-purple: #8B6990;
+$white: #FFFFFF;
+:root {
+    font-size: 62.5%;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.6rem;
+    height: 100vh;
+}
+.container__accordion {
+    position: relative;
+    background-image: url('../assets/images/background-pattern-mobile.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light-pink;
+    height: 100%;
+    .accordion__card {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        position: absolute;
+        top: 14.5rem;
+        background-color: $white;
+        padding: 2.4rem;
+        margin: 0 2.4rem;
+        border-radius: .8rem;
+        .accordion__title {
+            display: flex;
+            gap: 2.4rem;
+            align-items: center;
+            picture {
+                img {
+                    height: 2.4rem;
+                    width: 2.4rem;
+                }
+            }
+            h1 {
+                font-size: 3.2rem;
+                color: $dark-purple;
+                font-weight: 700;
+            }
+        }
+        .accordion__question {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 60rem;
+            details {
+                width: 100%;
+                summary {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 2.4rem;
+                    margin-bottom: 2.4rem;
+                    &:hover {
+                        cursor: pointer;
+                        h2 {
+                            color: $pink;
+                        }
+                    }
+                    h2 {
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        color: $dark-purple;
+                    }
+                    figure {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 3rem;
+                        min-width: 3rem;
+                        background-image: url('../assets/images/icon-plus.svg');
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat
+                    }
+                }
+                p {
+                    font-size: 1.4rem;
+                    line-height: 1.5;
+                    font-weight: 400;
+                    color: $pale-purple;
+                }
+            }
+            details[open] {
+                summary {
+                    figure {
+                        background-image: url('../assets/images/icon-minus.svg');
+                    }
+                }
+            }
+            hr {
+                border: none;
+                border-top: .1rem solid $light-pink;
+            }
+        }
+    }
+}
+@media screen and (min-width: 48rem) {
+    .container__accordion {
+        background-image: url('../assets/images/background-pattern-desktop.svg');
+        .accordion__card {
+            top: 10rem;
+        }
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .container__accordion {
+        .accordion__card {
+            gap: 3.2rem;
+            margin: 0;
+            top: 12rem;
+            padding: 4rem;
+            .accordion__title {
+                picture {
+                    width: 4rem;
+                    height: 4rem;
+                    img {
+                        height: 3.5rem;
+                        width: 3.5rem;
+                    }
+                }
+                h1 {
+                    font-size: 5.6rem;
+                }
+            }
+            .accordion__question {
+                details {
+                    summary {
+                        h2 {
+                            font-size: 1.8rem;
+                        }
+                    }
+                    p {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 90rem) {
+    .container__accordion {
+        .accordion__card {
+            top: 19rem;
+        }
+    }
+}

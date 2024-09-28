@@ -1,0 +1,149 @@
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("../assets/fonts/WorkSans-Italic-VariableFont_wght.ttf") format("truetype"), url("../assets/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
+}
+
+.container__accordion {
+  position: relative;
+  background-image: url("../assets/images/background-pattern-mobile.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F8EEFF;
+  height: 100%;
+}
+.container__accordion .accordion__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  position: absolute;
+  top: 14.5rem;
+  background-color: #FFFFFF;
+  padding: 2.4rem;
+  margin: 0 2.4rem;
+  border-radius: 0.8rem;
+}
+.container__accordion .accordion__card .accordion__title {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+}
+.container__accordion .accordion__card .accordion__title picture img {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+.container__accordion .accordion__card .accordion__title h1 {
+  font-size: 3.2rem;
+  color: #301534;
+  font-weight: 700;
+}
+.container__accordion .accordion__card .accordion__question {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 60rem;
+}
+.container__accordion .accordion__card .accordion__question details {
+  width: 100%;
+}
+.container__accordion .accordion__card .accordion__question details summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+.container__accordion .accordion__card .accordion__question details summary:hover {
+  cursor: pointer;
+}
+.container__accordion .accordion__card .accordion__question details summary:hover h2 {
+  color: #AD28EB;
+}
+.container__accordion .accordion__card .accordion__question details summary h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #301534;
+}
+.container__accordion .accordion__card .accordion__question details summary figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  min-width: 3rem;
+  background-image: url("../assets/images/icon-plus.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.container__accordion .accordion__card .accordion__question details p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #8B6990;
+}
+.container__accordion .accordion__card .accordion__question details[open] summary figure {
+  background-image: url("../assets/images/icon-minus.svg");
+}
+.container__accordion .accordion__card .accordion__question hr {
+  border: none;
+  border-top: 0.1rem solid #F8EEFF;
+}
+
+@media screen and (min-width: 48rem) {
+  .container__accordion {
+    background-image: url("../assets/images/background-pattern-desktop.svg");
+  }
+  .container__accordion .accordion__card {
+    top: 10rem;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .container__accordion .accordion__card {
+    gap: 3.2rem;
+    margin: 0;
+    top: 12rem;
+    padding: 4rem;
+  }
+  .container__accordion .accordion__card .accordion__title picture {
+    width: 4rem;
+    height: 4rem;
+  }
+  .container__accordion .accordion__card .accordion__title picture img {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+  .container__accordion .accordion__card .accordion__title h1 {
+    font-size: 5.6rem;
+  }
+  .container__accordion .accordion__card .accordion__question details summary h2 {
+    font-size: 1.8rem;
+  }
+  .container__accordion .accordion__card .accordion__question details p {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 90rem) {
+  .container__accordion .accordion__card {
+    top: 19rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
